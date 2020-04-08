@@ -1,14 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Mar 26 18:22:29 2020
+Created on Wed Feb 26 18:22:29 2020
 
 @author: Arun
 """
 
    
-    # ================= 2nd Method ======================
-    
-    
     
 import pandas as pd
 
@@ -56,6 +53,7 @@ for i,j in df2.iterrows():
 
 
 #Creating list of campaigns that has been deployed/ to be checked 
+# Later on this code will be change by creating API through API of sharepoint to see new deployed campaigns. 
         
 import datetime        
 deployed={"ID":[1981,1983],
@@ -136,171 +134,9 @@ QA_offtime.drop(['Value'],axis=1,inplace=True)
 
 
 
-
+# Final Data frame to show where files are not created on time before deployment date. 
 
 QA_offtime=complaint[complaint['Gap'].days>0] or ((complaint['File_CR_Dt']-complaint['Deployment_DT']).seconds)/3600>0)]
-                     
-                     
-    
-
-
-
-
-
-
-
-
-'''
-
-
-x=datetime.strptime(datetime.strftime(complaint['Dep_date'][2], '%Y-%m-%d %H:%M:%S'),'%Y-%m-%d %H:%M:%S')\
-    -datetime.strptime(complaint['File_CR'][2], '%Y-%m-%d %H:%M:%S')
-
-
-
-
-
-
-
-
-type(complaint['File_CR'][2])
-
-print(date_as_datetime)
-
-
-
-print(datetime.strftime(complaint['Dep_date'][2], '%Y-%m-%d %H:%M:%S'))
-print(type(datetime.strftime(complaint['Dep_date'][2], '%Y-%m-%d %H:%M:%S')))
-
-print(datetime.strptime(complaint['File_CR'][1], '%Y-%m-%d %H:%M:%S'))
-print(type(datetime.strptime(complaint['File_CR'][1], '%Y-%m-%d %H:%M:%S')))
-
-
-
-
-from datetime import datetime 
-
-x = datetime.datetime(2018, 6, 1).strftime('%Y-%m-%d %H:%M:%S')
-
-print(type(datetime.strptime(datetime.strftime(complaint['Dep_date'][2], '%Y-%m-%d %H:%M:%S'),'%Y-%m-%d %H:%M:%S')))
-
-print(y)
-print(type(y))
-
-
-
-
-date_object = datetime.date(complaint['File_CR'][2])
-print(date_object)
-
-
-
-datetime.date(complaint['File_CR'][2])>complaint['Dep_date'][2]
-
-
-
-type(complaint['Dep_date'][2])
-
-import datetime
-
-datetime.date(2020, 11, 20)>datetime.date(2020, 11, 19)
     
     
     
-    
-    if cart['Root'][x].find(str(cart['ID'][x]))>-1:
-        cart.iloc[cart[(cart['Root'][x].find(str(cart['ID'][x])))>-1].index,'Flag']='Yes'
-        
-        # KeyError: 'cannot use a single bool to index into setitem'
-        
-    
-    cart.loc[0]
-    # cart['Index']=cart.loc[cart['Root'].str.find(str(cart['ID'][x]))]
-    
-'''
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-    
-    to_append_root=pd.DataFrame(pd.Series(i[0],index=None),columns=['Root'])
-    
-    to_append_dirs=pd.DataFrame(pd.Series(i[1],index=None),columns=['Dir'])
-    # to_append_files=pd.DataFrame(pd.Series(files,index=None),columns=['File'])
-    QA_df=QA_df.append(to_append_root,ignore_index=True)
-    QA_df=QA_df.append(to_append_dirs,ignore_index=True)
-    # QA_df=QA_df.append(to_append_files,ignore_index=True)
-    
-    
-    
-    
-'''
-'C:\\Users\\Arun\\Desktop\\QA Folder\SP1981'
-
-I want to split this string using '\\'
-
-output should be tried str.split method
-
-['C:\\Users\\Arun\\Desktop\\QA Folder','SP1981']
-
-
-'''
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    for name in dirs:
-        print(name)
-        print('Root folder', root, 'created on', datetime.fromtimestamp(getctime(root)).strftime('%Y-%m-%d %H:%M:%S'))
-        print('Root dir', name, 'created on', (datetime.fromtimestamp(getctime(join(root,name))).strftime('%Y-%m-%d %H:%M:%S')))
-        print(os.listdir(join(root,name)))
-    for root, dirs, files in os.walk(join(root,name)):
-        print(files)
